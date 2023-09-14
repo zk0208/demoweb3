@@ -13,15 +13,6 @@ class dbconn():
             # port= 3306,
             # db= 'web3_exchange_data',
             # charset= 'utf8mb4'
-            host="gateway01.us-west-2.prod.aws.tidbcloud.com",
-            port=4000,
-            user="4D3vpXsNRNzveru.root",
-            password="RUphmFj41kDATFSi",
-            database="web3_exchange_data",
-            # ssl_mode="VERIFY_IDENTITY",
-            ssl= {
-                "ca": "/etc/ssl/cert.pem"
-            }
             )
         self.cursor = self.sqlConnect.cursor()
     

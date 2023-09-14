@@ -22,15 +22,6 @@ import okx.MarketData as MarketData
 import MySQLdb
 
 connection = MySQLdb.connect(
-    host="gateway01.us-west-2.prod.aws.tidbcloud.com",
-    port=4000,
-    user="4D3vpXsNRNzveru.root",
-    password="RUphmFj41kDATFSi",
-    database="",
-    ssl_mode="VERIFY_IDENTITY",
-    ssl={
-      "ca": "/etc/ssl/cert.pem"
-      }
     )
 
 def run_sql(conn, sql):

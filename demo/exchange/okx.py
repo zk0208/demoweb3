@@ -75,24 +75,25 @@ def okxCandleHotRank(db, okx, cryptolists, timeStart, time_interval):
             data = util.dataListChangeRank(reslists, okx.name, crypto, time_interval)
             db.insertDB(sql.sqlCommandRanking, data) 
 
-if __name__ == '__main__':
-    demo = sql.dbconn()
-    okx = ccxt.okx({
-        'proxies' : conf.proxy,
-        'enableRateLimit' : True,
-        'timeout' : 30000,
-        }) 
-    okx.load_markets()
-    # okxCandleSticks(demo, okx, okxCryptoList)
-    # okxCryptoInfo(demo, okx, okxCryptoList)
+# if __name__ == '__main__':
+#     demo = sql.dbconn()
+#     okx = ccxt.okx({
+#         'proxies' : conf.proxy,
+#         'enableRateLimit' : True,
+#         'timeout' : 30000,
+#         }) 
+#     okx.load_markets()
+#     # okxCandleSticks(demo, okx, okxCryptoList)
+#     # okxCryptoInfo(demo, okx, okxCryptoList)
 
-    startArray = conf.dateArray1
-    startT = conf.startTimeSatmp
-    endT = conf.endTimeSatmp
-    t = startT
-    while t < endT:
-        okxCandleHotRank(demo, okx, okxCryptoList, t, '1m')
-        startArray = startArray + datetime.timedelta(hours = 1)
-        t = int(startArray.timestamp() * 1000)
-        print('okx' + "finish insert lists...")
-    demo.dbClose()
+#     startArray = conf.dateArray1
+#     startT = conf.startTimeSatmp
+#     endT = conf.endTimeSatmp
+#     t = startT
+#     while t < endT:
+#         okxCandleHotRank(demo, okx, okxCryptoList, t, '1m')
+#         startArray = startArray + datetime.timedelta(hours = 1)
+#         t = int(startArray.timestamp() * 1000)
+#         print('okx' + "finish insert lists...")
+#     demo.dbClose()
+
